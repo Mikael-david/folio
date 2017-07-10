@@ -74,7 +74,7 @@ gulp.task('copy', function() {
             '!node_modules/font-awesome/*.json'
         ])
         .pipe(gulp.dest('vendor/font-awesome'))
-})
+});
 
 // Default task
 gulp.task('default', ['sass', 'minify-css', 'minify-js', 'copy']);
@@ -85,8 +85,9 @@ gulp.task('browserSync', function() {
         server: {
             baseDir: ''
         },
+        browser: ["google chrome"]
     })
-})
+});
 
 // Dev task with browserSync
 gulp.task('dev', ['browserSync', 'sass', 'minify-css', 'minify-js'], function() {
