@@ -35,4 +35,21 @@
         }
     });
 
+
+    // Portfolio
+    $('#portfolio').on('click', '[data-toggle="modal"]', function(){
+        // clear
+        $( ".portfolioModalContainer" ).empty();
+        $( ".portfolioModalContainer" ).load( "portfolio/load.html" );
+
+        // load
+        if($(this).attr('data-html')!=undefined)
+            $( ".portfolioModalContainer" ).load( "portfolio/"+$(this).attr('data-html'), function (reponse,status) {
+                if ( status == "error" ) { // error : not found
+                    $( ".portfolioModalContainer" ).load( "portfolio/fail.html" );
+                }
+            } );
+    });
+
+
 })(jQuery); // End of use strict
