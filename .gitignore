@@ -24,3 +24,4 @@ gulp-git.log
 /vendor/
 /node_modules/
 /AppBundle/Ressources/bower_components/
+/test/
