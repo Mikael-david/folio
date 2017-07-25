@@ -36,9 +36,11 @@
     }
     </style>
 
+    <script src="js/libs/createjs-2015.11.26.min.js"></script>
+    <script src="js/avatar.js"></script>
 </head>
 
-<body id="page-top">
+<body onload="init();" id="page-top">
 
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-toggleable-md navbar-inverse" id="mainNav">
@@ -46,7 +48,7 @@
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+            <a class="navbar-brand" href="#page-top">Mikaël DAVID</a>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
@@ -56,7 +58,7 @@
                         <a class="nav-link" href="#portfolio">Portfolio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
+                        <a class="nav-link" href="#parcours">Mon parcours</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#team">Team</a>
@@ -73,9 +75,14 @@
     <header class="masthead">
         <div class="container">
             <div class="intro-text">
-                <div class="intro-lead-in">Welcome To Our Studio!</div>
-                <div class="intro-heading">It's Nice To Meet You</div>
-                <a href="#services" class="btn btn-xl">Tell Me More</a>
+                <div id="animation_container">
+                    <canvas id="canvas" width="191" height="170" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 0.00);"></canvas>
+                    <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:191px; height:170px; position: absolute; left: 0px; top: 0px; display: block;">
+                    </div>
+                </div>
+                <div class="intro-heading">MIKAËL DAVID</div>
+                <div class="intro-lead-in">Graphiste, Webdesigner et&nbsp;intégrateur</div>
+                <!--<a href="#services" class="btn btn-xl">Tell Me More</a>-->
             </div>
         </div>
     </header>
@@ -247,12 +254,12 @@
     </section>
 
     <!-- About -->
-    <section id="about">
+    <section id="parcours">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">About</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading">Mon parcours</h2>
+                    <!--<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>-->
                 </div>
             </div>
             <div class="row">
@@ -264,11 +271,11 @@
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4>2009-2011</h4>
-                                    <h4 class="subheading">Our Humble Beginnings</h4>
+                                    <h4>2002-2003</h4>
+                                    <h4 class="subheading">Ecole Pivaut</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                    <p class="text-muted">École supérieure privée des arts appliqués à Nantes</p>
                                 </div>
                             </div>
                         </li>
@@ -278,11 +285,11 @@
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4>March 2011</h4>
-                                    <h4 class="subheading">An Agency is Born</h4>
+                                    <h4>2009</h4>
+                                    <h4 class="subheading">Grosbill</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                    <p class="text-muted">Webmarketeur, graphiste print et web</p>
                                 </div>
                             </div>
                         </li>
@@ -292,11 +299,11 @@
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4>December 2012</h4>
-                                    <h4 class="subheading">Transition to Full Service</h4>
+                                    <h4>2004-2009</h4>
+                                    <h4 class="subheading">ChoYou</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                    <p class="text-muted">Identités visuelles, création papier, webdesign, édition</p>
                                 </div>
                             </div>
                         </li>
@@ -306,19 +313,19 @@
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4>July 2014</h4>
-                                    <h4 class="subheading">Phase Two Expansion</h4>
+                                    <h4>2009-2017</h4>
+                                    <h4 class="subheading">Noproblemo</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                    <p class="text-muted">Chef de projet, site internet, graphiste, webdesign, intégrateur, développeur, impression papier et foulard</p>
                                 </div>
                             </div>
                         </li>
                         <li class="timeline-inverted">
                             <div class="timeline-image">
-                                <h4>Be Part
-                                    <br>Of Our
-                                    <br>Story!</h4>
+                                <h4>FAIRE PARTIE
+                                    <br>DE NÔTRE
+                                    <br>RÉCIT!</h4>
                             </div>
                         </li>
                     </ul>
