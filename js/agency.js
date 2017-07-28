@@ -51,5 +51,14 @@
             } );
     });
 
+    // Portfolio Modal
+    $('#portfolioModal').on('show.bs.modal', function (e) {
+        $('#mainNav').css({'overflow' : 'scroll'});
+    });
+
+    $('#portfolioModal').on('hidden.bs.modal', function (e) {
+        $('#mainNav').css({'overflow' : 'auto'});
+    });
+
 
 })(jQuery); // End of use strict

@@ -75,7 +75,6 @@ body {
   #mainNav .container {
     padding: 0; }
     #mainNav .container .navbar-brand {
-      color: #4288c4;
       font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive; }
       #mainNav .container .navbar-brand:hover, #mainNav .container .navbar-brand:focus, #mainNav .container .navbar-brand:active, #mainNav .container .navbar-brand.active {
         color: #326ea1; }
@@ -438,7 +437,6 @@ header.masthead {
 
 section#contact {
   background-color: #222222;
-  background-image: url("../img/map-image.png");
   background-repeat: no-repeat;
   background-position: center; }
   section#contact .section-heading {
